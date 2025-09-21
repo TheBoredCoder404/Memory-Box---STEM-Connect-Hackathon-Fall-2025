@@ -1,0 +1,148 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 4fr 1fr; 
+    gap: 20px;
+    background-color: #A7D1FF;
+    color: white;
+}
+.add-a-little-padding{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.padding{
+    padding-bottom: 30;
+}
+.paddingLeft{
+    padding-left: 30px;
+}
+.main{
+    margin: 0%;
+    background-color: rgb(235, 228, 228);
+
+}
+.title{
+    padding-left: 3%;
+    font-size: 22px;
+}
+.button {
+  padding: 25px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 40px;
+  color: white;
+  border-bottom-left-radius: 50%;
+  border-top-left-radius: 50%;
+}
+.button2 {
+  padding: 25px 15px;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 40px;
+  color: white;
+  background-color: #A7D1FF;
+  border: none;
+}
+
+.memRelease{
+    border: solid;
+    text-align: center;
+    margin: 0 auto;
+    width: 70%;
+    height: 500px;
+}
+
+@keyframes buttonHover {
+    from {background-color:#A7D1FF;}
+    to{background-color:#4ea1fa ;}
+
+}
+.getstarted{
+    padding: 25px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 40px;
+    color: black;
+    width: 100%;
+    background-color: #A7D1FF;
+    border-bottom-left-radius: 200%;
+    border-bottom-right-radius: 200%;
+    width: 98%
+}
+.button:hover{
+    animation-name: buttonHover;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+.center{
+    margin-left: 25%;
+    padding-top: 20px;
+}
+.center2{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.textbox{
+    height: 500px;
+    width: 66%;
+    font-family: "Arial Black", Arial, sans-serif;
+    box-shadow: 0px 0px 30px pink;
+    margin: 0 auto
+}
+.startbutton{
+    border: 25px #A7D1FF;
+    background-color: white;
+    
+}
+.startbutton:hover{
+    background-color: gray;
+}
+.content{
+    height: px;
+    background: linear-gradient(to right, #A7D1FF, white);
+}
+.content1{
+    text-align: left;
+    font-family: "Arial Black", Arial, sans-serif;
+    display: inline-block;
+}
+.content2{
+    text-align: right;
+    font-family: "Arial Black", Arial, sans-serif;
+    display: inline-block;
+}
+.content3{
+    text-align: center;
+    font-family: "Arial Black", Arial, sans-serif;
+    display: inline-block;
+    
+}
+.logotext{
+    font-family: "Arial Black", Arial, sans-serif;
+}
+.normaltext{
+    font-family: "Arial Black", Arial, sans-serif;
+    width: 200;
+}
+.header{
+    display: inline-block;
+}
+.footer{
+    display: inline-block;
+}
+.mainline{
+    background-color: #A7D1FF;
+    border: none;          
+    height: 15px; 
+}
+.divider{
+    background-color: #A7D1FF;
+    border: none;          
+    height: 15px; 
+    length: 1000px;
+}

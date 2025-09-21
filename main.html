@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" type = "text/css" href = "style.css">
+    <title>Write a Memory</title>
+
+</head>
+
+<body class = "main">
+    
+<div class = "grid-container">
+    <div class = "title"><h2>Memory Box</h2></div>
+    <a href="home.html" class="button" >Home</a>
+</div>
+
+ <div class = "center"><form>
+    <textarea class = "textbox" placeholder = "Write Your Memory!" id = "memory"></textarea>
+ </form></div>
+ <div class = "center">
+    <p>When do you want the message to be unlocked?</p>
+    <input type = "datetime-local" id = "openTime">
+</div>
+ <div class = "add-a-little-padding">
+    <button class = "button2" onclick="lockMemory()">Lock</button>
+</div>
+<div class = "textbox" id = "returns">
+    <p>Store a memory first</p>
+</div>
+<br>
+<br>
+
+</body>
+
+</html>
+
+<script>
+    // Save capsule + generate ICS
+    function lockMemory() 
+    {
+        const mem = document.getElementById("memory").value;
+        const date = new Date(document.getElementById("openTime").value);
+      
+        if (!mem || isNaN(date.getTime())) {
+            alert("Please enter a message and valid date.");
+            return;
+        }
+
+        const box = {memory: mem,unlockDate: date.getTime()};
+
+        localStorage.setItem("memoryBox", JSON.stringify(box));
+        alert("Memory Stored")
+        checkCapsule();
+    }
+
+    // Generate calendar (.ics) file
+   
+    // Check capsule status
+    function checkCapsule() 
+    {
+        const status = document.getElementById("returns");
+        const stored = localStorage.getItem("memoryBox");
+
+        if (!stored) 
+        {
+            status.textContent = "No lockbox saved yet.";
+            return;
+        }
+
+        const box = JSON.parse(stored);
+
+        if (Date.now() >= box.unlockDate)
+        {
+            status.innerHTML = `<span class="unlocked"> Memory Unlocked:</span><br>${box.memory}`;
+        }
+
+        else 
+        {
+            const unlockDate = new Date(box.unlockDate).toLocaleString();
+            status.innerHTML = `<span class="locked"> Locked until ${unlockDate}</span>`;
+        }
+    }
+
+    // Run check on page load
+    checkCapsule();
+</script>
